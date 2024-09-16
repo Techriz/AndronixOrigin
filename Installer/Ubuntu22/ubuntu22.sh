@@ -243,9 +243,9 @@ Ubuntu=$(readlink -f ./${bin})
 if [ -f ${bashrc} ]; 
 	then
 		# Add alias to the bashrc file
-		echo "alias ubuntu=${Ubuntu}" >> ${bashrc}
+		echo "alias ubuntu22=${Ubuntu}" >> ${bashrc}
 		source $bashrc
-		echo "Next time, Launch Ubuntu with this command: ubuntu"
+		echo "Next time, Launch Ubuntu with this command: ubuntu22"
 else 
 	echo "You can now launch Ubuntu with the ./${bin} script from next time"
 fi	
