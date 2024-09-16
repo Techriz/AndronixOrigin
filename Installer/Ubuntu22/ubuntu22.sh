@@ -229,6 +229,26 @@ chmod +x $bin
 echo "removing image for some space"
 rm $tarball
 clear
-echo "You can now launch Ubuntu with the ./${bin} script from next time"
+
+
+### Set-up an alias to allow easy execution from any dir
+
+# Path to bashrc on termux
+bashrc="/data/data/com.termux/files/usr/etc/bash.bashrc"
+
+# Get the absolute path of $bin
+Ubuntu=$(readlink -f ./${bin})
+
+# Check if the bashrc file exists
+if [ -f ${bashrc} ]; 
+	then
+		# Add alias to the bashrc file
+		echo "alias ubuntu22=${Ubuntu}" >> ${bashrc}
+		# Reload bashrc
+		source $bashrc
+		echo "Next time, Launch Ubuntu with this command: ubuntu22"
+else 
+	echo "You can now launch Ubuntu with the ./${bin} script from next time"
+fi	
 bash $bin
 
