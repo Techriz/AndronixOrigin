@@ -244,6 +244,7 @@ if [ -f ${bashrc} ];
 	then
 		# Add alias to the bashrc file
 		echo "alias ubuntu22=${Ubuntu}" >> ${bashrc}
+		# Reload bashrc
 		source $bashrc
 		echo "Next time, Launch Ubuntu with this command: ubuntu22"
 else 
